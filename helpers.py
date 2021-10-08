@@ -9,11 +9,9 @@ from itertools import chain, cycle
 def setup(x, y):
     '''Sets up the turtle, ready to draw,
     at the given coordinates'''
-    penup()
-    goto(x, y)
-    pendown()
-    speed(0)
     hideturtle()
+    fly(x, y)
+    speed(0)
     setheading(0)
     tracer(0)
 

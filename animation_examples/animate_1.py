@@ -1,4 +1,4 @@
-from turtle import  Screen, clear
+from turtle import  Screen, clear, update
 from parts import draw_triangle
 from helpers import update_position, setup
 import settings
@@ -17,18 +17,17 @@ def draw_animation(num_frames, sidelen, color, sleeptime):
         if i == num_frames:
             update_position(100, 0)
             draw_triangle(sidelen, color)
-        screen.update()
+        update()
         time.sleep(sleeptime)
     clear()
+    
 
 def main():
+    screen = Screen()
+    screen.setup(settings.SCREENWIDTH,settings.SCREENHEIGHT)
 
     for i in range(settings.NUMREPEATS):
         setup(settings.START_X,settings.START_Y)
         draw_animation(settings.NUMFRAMES, settings.SIDELEN, settings.COLOR, settings.SLEEPTIME)
-    input("Press enter...")
 
-if __name__ == '__main__':
-    screen = Screen()
-    screen.setup(settings.SCREENWIDTH,settings.SCREENHEIGHT)
-    main()
+main()

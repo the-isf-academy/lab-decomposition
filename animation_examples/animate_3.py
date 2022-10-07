@@ -17,13 +17,12 @@ def draw_animation(num_frames, sidelen, color, sleeptime):
         time.sleep(sleeptime)
         clear()
 
-def main():
-    for i in range(settings.NUMREPEATS):
-        setup(settings.START_X,settings.START_Y)
-        draw_animation(settings.NUMFRAMES, settings.SIDELEN, settings.COLOR, settings.SLEEPTIME)
-    input("Press enter...")
+
 
 if __name__ == '__main__':
     screen = Screen()
     screen.setup(settings.SCREENWIDTH,settings.SCREENHEIGHT)
-    main()
+    
+    for i in range(settings.NUMREPEATS):
+        setup(settings.START_X,settings.START_Y)
+        draw_animation(settings.NUMFRAMES, settings.SIDELEN, settings.COLOR, settings.SLEEPTIME)
